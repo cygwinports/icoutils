@@ -7,7 +7,7 @@ DESCRIPTION="The icoutils are a set of programs for extracting and converting im
 HOMEPAGE="http://www.nongnu.org/icoutils/"
 SRC_URI="http://savannah.nongnu.org/download/icoutils/icoutils-${VERSION}.tar.bz2"
 PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/icoutils.git/tree/icoutils-wrestool-extract.patch
+	http://pkgs.fedoraproject.org/cgit/icoutils.git/plain/icoutils-wrestool-extract.patch
 "
 
 src_compile() {

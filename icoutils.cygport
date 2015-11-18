@@ -1,0 +1,21 @@
+NAME="icoutils"
+VERSION=0.31.0
+RELEASE=4
+CATEGORY="Graphics"
+SUMMARY="Utility for extracting and converting Microsoft icon and cursor files."
+DESCRIPTION="The icoutils are a set of programs for extracting and converting images in Microsoft Windows icon and cursor files. These files usually have the extension .ico or .cur, but they can also be embedded in executables or libraries."
+HOMEPAGE="http://www.nongnu.org/icoutils/"
+SRC_URI="http://savannah.nongnu.org/download/icoutils/icoutils-${VERSION}.tar.bz2"
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/icoutils.git/tree/icoutils-wrestool-extract.patch
+"
+
+src_compile() {
+	cd ${S}
+	cygautoreconf
+	lndirs
+	cd ${B}
+	CYGCONF_SOURCE=${B} \
+	cygconf
+	cygmake
+}
